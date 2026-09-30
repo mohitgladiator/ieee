@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE MTT-S | MITS-DU Student Branch Chapter Gwalior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mtts: {
+                            navy: '#001A3D',
+                            deep: '#002855',
+                            blue: '#004080',
+                            cyan: '#00D2FF',
+                            gold: '#D4AF37',
+                            accent: '#38BDF8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .circuit-bg {
+            background-color: #001A3D;
+            background-image: radial-gradient(rgba(0, 210, 255, 0.12) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cyan-glow {
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);
+        }
+        .glass-card {
+            background: rgba(0, 40, 85, 0.55);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 210, 255, 0.15);
+        }
+        .glass-nav {
+            background: rgba(0, 26, 61, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#00142E] text-slate-100 font-sans leading-relaxed selection:bg-mtts-cyan selection:text-mtts-navy">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-mtts-blue via-mtts-cyan to-mtts-gold p-[2px] shadow-lg shadow-mtts-cyan/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-mtts-navy rounded-[6px] flex items-center justify-center">
+                        <i data-lucide="radio" class="w-5 h-5 text-mtts-cyan"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center">
+                        IEEE MTT-S <span class="text-mtts-cyan ml-1 font-semibold text-xs sm:text-sm px-1.5 py-0.5 rounded bg-mtts-cyan/10 border border-mtts-cyan/30">MITS-DU</span>
+                    </span>
+                    <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Gwalior Student Branch</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                <a href="#home" class="text-mtts-cyan hover:text-white transition-colors">Home</a>
+                <a href="#about-mtts" class="text-slate-300 hover:text-mtts-cyan transition-colors">IEEE MTT-S</a>
+                <a href="#about-chapter" class="text-slate-300 hover:text-mtts-cyan transition-colors">Chapter</a>
+                <a href="#domains" class="text-slate-300 hover:text-mtts-cyan transition-colors">Domains</a>
+                <a href="#events" class="text-slate-300 hover:text-mtts-cyan transition-colors">Events</a>
+                <a href="#team" class="text-slate-300 hover:text-mtts-cyan transition-colors">Executive Team</a>
+                <a href="#contact" class="text-slate-300 hover:text-mtts-cyan transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Toggle -->
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-mtts-navy bg-gradient-to-r from-mtts-cyan to-sky-300 hover:from-white hover:to-mtts-cyan shadow-md shadow-mtts-cyan/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i data-lucide="user-plus" class="w-4 h-4 mr-2"></i> Join Chapter
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-mtts-blue/50 focus:outline-none" aria-label="Toggle Menu">
+                    <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                    <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-mtts-navy/95 border-b border-mtts-cyan/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-mtts-cyan bg-mtts-blue/30">Home</a>
+            <a href="#about-mtts" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">About IEEE MTT-S</a>
+            <a href="#about-chapter" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">About Chapter</a>
+            <a href="#domains" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">Domains & Activities</a>
+            <a href="#events" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">Events & Workshops</a>
+            <a href="#team" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">Executive Committee</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-mtts-cyan hover:bg-mtts-blue/20">Contact & Register</a>
+            <a href="#contact" class="mobile-nav-link flex items-center justify-center w-full px-4 py-2.5 mt-2 rounded-lg text-sm font-semibold text-mtts-navy bg-mtts-cyan hover:bg-white">
+                <i data-lucide="user-plus" class="w-4 h-4 mr-2"></i> Join Chapter / Register
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden circuit-bg flex items-center min-h-[90vh]">
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-mtts-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-mtts-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-mtts-blue/60 border border-mtts-cyan/30 text-xs sm:text-sm font-medium text-mtts-cyan shadow-inner">
+                        <span class="flex h-2 w-2 rounded-full bg-mtts-cyan animate-pulse"></span>
+                        <span>Official IEEE Student Branch Chapter • MITS-DU Gwalior</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        IEEE Microwave Theory & <span class="gold-gradient-text">Technology Society</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Empowering next-generation engineers and researchers in RF, Microwave Engineering, Radar Systems, Wireless Communications, and Terahertz Technologies.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#events" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-mtts-navy bg-gradient-to-r from-mtts-cyan via-sky-300 to-mtts-cyan hover:shadow-lg hover:shadow-mtts-cyan/30 transition-all duration-300 flex items-center justify-center group">
+                            Explore Events
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-slate-200 glass-card hover:bg-mtts-blue/60 hover:border-mtts-cyan/50 hover:text-white transition-all duration-300 flex items-center justify-center border border-slate-700">
+                            Register Now
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats Pill -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-mtts-cyan">150+</p>
+                            <p class="text-xs text-slate-400 font-medium">Active Student Members</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-mtts-gold">20+</p>
+                            <p class="text-xs text-slate-400 font-medium">Workshops & Events</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-sky-400">12+</p>
+                            <p class="text-xs text-slate-400 font-medium">Research Projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl glass-card p-6 cyan-glow flex flex-col items-center justify-center border border-mtts-cyan/30 overflow-hidden group">
+                        <!-- Background Radar Rings Animation -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                            <div class="w-72 h-72 border border-mtts-cyan rounded-full animate-ping duration-1000"></div>
+                            <div class="w-48 h-48 border border-mtts-gold rounded-full"></div>
+                            <div class="w-24 h-24 border border-mtts-cyan rounded-full"></div>
+                        </div>
+
+                        <!-- Central Technology Diagram Visual -->
+                        <div class="relative z-10 text-center space-y-4">
+                            <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-tr from-mtts-deep via-mtts-blue to-mtts-navy flex items-center justify-center border border-mtts-cyan/50 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="waves" class="w-12 h-12 text-mtts-cyan animate-pulse"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-white tracking-wide">RF & EM Spectrum Focus</h2>
+                            <p class="text-xs text-slate-300 px-4">From microstrip circuits to satellite link analysis, pioneering state-of-the-art RF innovations at MITS-DU Gwalior.</p>
+                            
+                            <div class="pt-2 flex justify-center space-x-2">
+                                <span class="px-2.5 py-1 text-[10px] font-semibold bg-mtts-cyan/15 text-mtts-cyan rounded-md border border-mtts-cyan/30">CST Simulation</span>
+                                <span class="px-2.5 py-1 text-[10px] font-semibold bg-mtts-gold/15 text-mtts-gold rounded-md border border-mtts-gold/30">HFSS Antenna</span>
+                                <span class="px-2.5 py-1 text-[10px] font-semibold bg-sky-500/15 text-sky-300 rounded-md border border-sky-400/30">5G / 6G Tech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IEEE MTT-S GLOBAL INTRODUCTION -->
+    <section id="about-mtts" class="py-20 bg-mtts-navy relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-cyan mb-2">Global Vision & Legacy</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">What is IEEE MTT-S?</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mtts-cyan to-mtts-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        The <strong class="text-white">IEEE Microwave Theory and Technology Society (MTT-S)</strong> is a global organization with more than 13,000 members and 190 chapters worldwide. It promotes the theory and applications of radio-frequency (RF), microwave, millimeter-wave, and terahertz technologies.
+                    </p>
+                    <p>
+                        For over 70 years, MTT-S has driven advancements in wireless communications, radar systems, satellite navigation, medical imaging, and high-speed electronics, connecting global researchers, academic pioneers, and industry leaders.
+                    </p>
+                    
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-mtts-deep/60 border border-slate-700/60 flex items-start space-x-3">
+                            <i data-lucide="globe" class="w-6 h-6 text-mtts-cyan shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-white text-sm">Global Network</h3>
+                                <p class="text-xs text-slate-400">Connect with expert researchers across 100+ countries.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-mtts-deep/60 border border-slate-700/60 flex items-start space-x-3">
+                            <i data-lucide="book-open" class="w-6 h-6 text-mtts-gold shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-white text-sm">IEEE Xplore Access</h3>
+                                <p class="text-xs text-slate-400">Direct access to flagship journals & publications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global Impact Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl border border-mtts-cyan/20 hover:border-mtts-cyan/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-mtts-cyan/10 flex items-center justify-center text-mtts-cyan mb-4">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-1">RF & Microwaves</h4>
+                        <p class="text-xs text-slate-400">Core technologies enabling smartphones, Wi-Fi 7, and satellite internet.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-mtts-gold/20 hover:border-mtts-gold/50 transition-all translate-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-mtts-gold/10 flex items-center justify-center text-mtts-gold mb-4">
+                            <i data-lucide="radar" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-1">Radar & Sensing</h4>
+                        <p class="text-xs text-slate-400">Automotive radars, defense avionics, and remote sensing equipment.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-mtts-gold/20 hover:border-mtts-gold/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-mtts-gold/10 flex items-center justify-center text-mtts-gold mb-4">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-1">Scholarships</h4>
+                        <p class="text-xs text-slate-400">Exclusive MTT-S undergraduate and graduate fellowship grants.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-mtts-cyan/20 hover:border-mtts-cyan/50 transition-all translate-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-mtts-cyan/10 flex items-center justify-center text-mtts-cyan mb-4">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-1">Symposiums</h4>
+                        <p class="text-xs text-slate-400">International Microwave Symposium (IMS) & regional conferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT THE CHAPTER (MITS-DU GWALIOR) -->
+    <section id="about-chapter" class="py-20 bg-[#001736] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-gold mb-2">Local Student Chapter</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">About MITS-DU Chapter</p>
+                <p class="text-slate-400 text-sm mt-3">Madhav Institute of Technology & Science - Deemed to be University, Gwalior (M.P.)</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mtts-gold to-mtts-cyan mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-mtts-cyan relative overflow-hidden">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-2.5 rounded-lg bg-mtts-cyan/10 text-mtts-cyan">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Our Mission</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        To foster technical excellence in RF, microwave, and electromagnetics among undergraduate and postgraduate students at MITS-DU by providing hands-on training on industry-standard CAD tools, organizing expert guest lectures, and encouraging student publications and hardware prototypes.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-mtts-gold relative overflow-hidden">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-2.5 rounded-lg bg-mtts-gold/10 text-mtts-gold">
+                            <i data-lucide="eye" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Our Vision</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        To establish MITS-DU Gwalior as a premier student hub for microwave engineering research and industrial applications, building strong bridges between academic learning, research laboratories, and top semiconductor & telecommunications industries.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Features Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-5 rounded-xl bg-mtts-navy border border-slate-800 text-center hover:border-mtts-cyan/40 transition-colors">
+                    <i data-lucide="layers" class="w-8 h-8 text-mtts-cyan mx-auto mb-3"></i>
+                    <h4 class="font-semibold text-white text-base">Hands-on Workshops</h4>
+                    <p class="text-xs text-slate-400 mt-1">Practical antenna fabrication and vector network analyzer (VNA) testing.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-mtts-navy border border-slate-800 text-center hover:border-mtts-cyan/40 transition-colors">
+                    <i data-lucide="terminal" class="w-8 h-8 text-mtts-gold mx-auto mb-3"></i>
+                    <h4 class="font-semibold text-white text-base">Simulation Software</h4>
+                    <p class="text-xs text-slate-400 mt-1">Specialized training on Ansys HFSS, CST Studio, and Keysight ADS.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-mtts-navy border border-slate-800 text-center hover:border-mtts-cyan/40 transition-colors">
+                    <i data-lucide="file-text" class="w-8 h-8 text-sky-400 mx-auto mb-3"></i>
+                    <h4 class="font-semibold text-white text-base">Research Papers</h4>
+                    <p class="text-xs text-slate-400 mt-1">Guidance on drafting and submitting papers to IEEE conferences.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-mtts-navy border border-slate-800 text-center hover:border-mtts-cyan/40 transition-colors">
+                    <i data-lucide="network" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+                    <h4 class="font-semibold text-white text-base">Industrial Visits</h4>
+                    <p class="text-xs text-slate-400 mt-1">Tours to satellite ground stations, defense labs, and RF manufacturing facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMAINS / ACTIVITIES -->
+    <section id="domains" class="py-20 bg-mtts-navy relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-cyan mb-2">Technical Wings</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Domains & Focus Areas</p>
+                <p class="text-slate-400 text-sm mt-2">Explore specialized technical domains guided by senior mentors and faculty advisors.</p>
+                <div class="w-16 h-1 bg-mtts-cyan mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Domain 1 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-mtts-cyan/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-mtts-cyan/10 flex items-center justify-center text-mtts-cyan mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="wifi" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Antenna Design & Fabrication</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Design microstrip patch antennas, reconfigurable arrays, planar UWB antennas, and mm-wave antennas for modern wireless platforms.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-cyan mr-2"></i>Microstrip Patch Antennas</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-cyan mr-2"></i>MIMO Systems for 5G</li>
+                    </ul>
+                </div>
+
+                <!-- Domain 2 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-mtts-gold/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-mtts-gold/10 flex items-center justify-center text-mtts-gold mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">RF & Microwave Circuit Design</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Synthesis and analysis of passive and active RF components including filters, power dividers, low-noise amplifiers (LNA), and couplers.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-gold mr-2"></i>RF Bandpass Filters</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-gold mr-2"></i>Impedance Matching Circuits</li>
+                    </ul>
+                </div>
+
+                <!-- Domain 3 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-sky-400/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Electromagnetic Simulation</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Mastering 3D electromagnetic solvers such as Ansys HFSS and CST Microwave Studio for high-frequency circuit verification.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 mr-2"></i>S-Parameter Analysis</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 mr-2"></i>Far-field Radiation Patterns</li>
+                    </ul>
+                </div>
+
+                <!-- Domain 4 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-emerald-400/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="radio-receiver" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Radar & Satellite Systems</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Understanding radar target cross-section (RCS), phased array antennas, satellite microwave transponders, and Doppler radar modules.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-2"></i>FMCW Radar Prototyping</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-2"></i>Satellite Earth Stations</li>
+                    </ul>
+                </div>
+
+                <!-- Domain 5 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-purple-400/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Wireless & IoT Hardware</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Integrating RF communication modules (LoRa, Zigbee, Wi-Fi 6) into smart IoT systems and wearable wireless sensors.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 mr-2"></i>RF Energy Harvesting</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 mr-2"></i>Wearable Bio-Antennas</li>
+                    </ul>
+                </div>
+
+                <!-- Domain 6 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700/80 hover:border-mtts-cyan/60 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-mtts-cyan/10 flex items-center justify-center text-mtts-cyan mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-check-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Student Research & Publications</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Mentorship for drafting research manuscripts, presenting at IEEE conferences, and filing student utility patents.
+                    </p>
+                    <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-cyan mr-2"></i>IEEE Conference Submissions</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-mtts-cyan mr-2"></i>Peer Review Writing Workshops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING EVENTS / WORKSHOPS -->
+    <section id="events" class="py-20 bg-[#001736] relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-gold mb-2">Learn & Innovate</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Upcoming Events & Workshops</p>
+                    <p class="text-slate-400 text-sm mt-2">Register early to reserve your hands-on laboratory seat.</p>
+                </div>
+
+                <!-- Event Filter Tabs -->
+                <div class="mt-6 md:mt-0 flex space-x-2 bg-mtts-navy p-1.5 rounded-xl border border-slate-800">
+                    <button onclick="filterEvents('all')" id="btn-all" class="event-tab-btn px-4 py-2 rounded-lg text-xs font-semibold text-mtts-navy bg-mtts-cyan transition-colors">All Events</button>
+                    <button onclick="filterEvents('workshop')" id="btn-workshop" class="event-tab-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-colors">Workshops</button>
+                    <button onclick="filterEvents('symposium')" id="btn-symposium" class="event-tab-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-colors">Symposiums</button>
+                </div>
+            </div>
+
+            <!-- Event Cards Grid -->
+            <div id="events-grid" class="grid lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="event-card workshop glass-card rounded-2xl overflow-hidden border border-slate-700/80 hover:border-mtts-cyan/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-mtts-blue overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="RF Workshop" class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/002855/00D2FF?text=RF+Workshop'">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-mtts-cyan text-mtts-navy uppercase tracking-wider">National Workshop</span>
+                            <span class="absolute bottom-4 right-4 px-3 py-1 rounded-md text-xs font-medium bg-mtts-navy/90 text-slate-200 border border-slate-700">Oct 24-25, 2026</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Microstrip Antenna Design using CST Studio</h3>
+                            <p class="text-xs text-slate-300 mb-4 line-clamp-2">Two-day intensive hands-on lab training covering microstrip patch design, S11 parameter tuning, and gain optimization.</p>
+                            
+                            <div class="space-y-2 text-xs text-slate-400">
+                                <div class="flex items-center"><i data-lucide="clock" class="w-4 h-4 text-mtts-cyan mr-2"></i>10:00 AM - 04:00 PM IST</div>
+                                <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-mtts-cyan mr-2"></i>RF Research Lab, MITS-DU Gwalior</div>
+                                <div class="flex items-center"><i data-lucide="user" class="w-4 h-4 text-mtts-cyan mr-2"></i>Dr. R. K. Sharma (Senior Member IEEE)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-4 flex items-center justify-between">
+                        <span class="text-xs text-mtts-gold font-semibold">Limited to 40 Seats</span>
+                        <button onclick="openRegisterModal('Microstrip Antenna Design using CST Studio')" class="px-4 py-2 rounded-lg text-xs font-semibold bg-mtts-cyan text-mtts-navy hover:bg-white transition-colors flex items-center">
+                            Register <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card symposium glass-card rounded-2xl overflow-hidden border border-slate-700/80 hover:border-mtts-gold/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-mtts-blue overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Tech Symposium" class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/002855/D4AF37?text=MTT-S+Symposium'">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-mtts-gold text-mtts-navy uppercase tracking-wider">Annual Flagship</span>
+                            <span class="absolute bottom-4 right-4 px-3 py-1 rounded-md text-xs font-medium bg-mtts-navy/90 text-slate-200 border border-slate-700">Nov 12, 2026</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">MTT-S Tech Symposium 2026: 6G & Terahertz</h3>
+                            <p class="text-xs text-slate-300 mb-4 line-clamp-2">Keynote speeches, student paper presentations, poster sessions, and industry interaction on next-gen 6G wireless communication.</p>
+                            
+                            <div class="space-y-2 text-xs text-slate-400">
+                                <div class="flex items-center"><i data-lucide="clock" class="w-4 h-4 text-mtts-gold mr-2"></i>09:30 AM - 05:00 PM IST</div>
+                                <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-mtts-gold mr-2"></i>Main Auditorium, MITS-DU</div>
+                                <div class="flex items-center"><i data-lucide="user" class="w-4 h-4 text-mtts-gold mr-2"></i>Eminent Industry & Academic Experts</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-4 flex items-center justify-between">
+                        <span class="text-xs text-mtts-cyan font-semibold">Certificate Provided</span>
+                        <button onclick="openRegisterModal('MTT-S Tech Symposium 2026')" class="px-4 py-2 rounded-lg text-xs font-semibold bg-mtts-gold text-mtts-navy hover:bg-white transition-colors flex items-center">
+                            Register <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card workshop glass-card rounded-2xl overflow-hidden border border-slate-700/80 hover:border-sky-400/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-mtts-blue overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="RF Hardware Masterclass" class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/002855/38BDF8?text=Hardware+Masterclass'">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-sky-400 text-mtts-navy uppercase tracking-wider">Masterclass</span>
+                            <span class="absolute bottom-4 right-4 px-3 py-1 rounded-md text-xs font-medium bg-mtts-navy/90 text-slate-200 border border-slate-700">Dec 05, 2026</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Hands-on Vector Network Analyzer (VNA) Testing</h3>
+                            <p class="text-xs text-slate-300 mb-4 line-clamp-2">Practical session on calibrating VNAs, measuring return loss, VSWR, and radiation patterns for fabricated antennas.</p>
+                            
+                            <div class="space-y-2 text-xs text-slate-400">
+                                <div class="flex items-center"><i data-lucide="clock" class="w-4 h-4 text-sky-400 mr-2"></i>02:00 PM - 05:00 PM IST</div>
+                                <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-sky-400 mr-2"></i>Microwave Testing Lab, ECE Dept</div>
+                                <div class="flex items-center"><i data-lucide="user" class="w-4 h-4 text-sky-400 mr-2"></i>MITS-DU Microwave Lab Faculty</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-4 flex items-center justify-between">
+                        <span class="text-xs text-slate-300 font-semibold">Open for IEEE Members</span>
+                        <button onclick="openRegisterModal('Hands-on Vector Network Analyzer (VNA) Testing')" class="px-4 py-2 rounded-lg text-xs font-semibold bg-sky-400 text-mtts-navy hover:bg-white transition-colors flex items-center">
+                            Register <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE COMMITTEE / TEAM -->
+    <section id="team" class="py-20 bg-mtts-navy border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-cyan mb-2">Leadership & Guidance</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Executive Committee</p>
+                <p class="text-slate-400 text-sm mt-2">Dedicated mentors and student leaders driving the chapter forward.</p>
+                <div class="w-16 h-1 bg-mtts-cyan mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Advisor -->
+                <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/80 hover:border-mtts-gold/50 transition-all group">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-mtts-blue to-mtts-gold p-1 mb-4 shadow-md group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Faculty Advisor" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/200x200/002855/D4AF37?text=Advisor'">
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Dr. Vandana Vikas</h3>
+                    <p class="text-xs text-mtts-gold font-semibold uppercase tracking-wider mt-1">Faculty Advisor</p>
+                    <p class="text-xs text-slate-400 mt-2">Associate Professor, Department of ECE, MITS-DU</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="mailto:advisor@mitsgwalior.in" class="text-slate-400 hover:text-mtts-cyan" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Chair -->
+                <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/80 hover:border-mtts-cyan/50 transition-all group">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-mtts-blue to-mtts-cyan p-1 mb-4 shadow-md group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Student Chair" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/200x200/002855/00D2FF?text=Chair'">
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Aarav Sharma</h3>
+                    <p class="text-xs text-mtts-cyan font-semibold uppercase tracking-wider mt-1">Student Chair</p>
+                    <p class="text-xs text-slate-400 mt-2">B.Tech ECE (4th Year)</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Vice Chair -->
+                <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/80 hover:border-mtts-cyan/50 transition-all group">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-mtts-blue to-mtts-cyan p-1 mb-4 shadow-md group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Vice Chair" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/200x200/002855/00D2FF?text=Vice+Chair'">
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Ananya Gupta</h3>
+                    <p class="text-xs text-mtts-cyan font-semibold uppercase tracking-wider mt-1">Vice Chair</p>
+                    <p class="text-xs text-slate-400 mt-2">B.Tech ECE (3rd Year)</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Secretary -->
+                <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/80 hover:border-sky-400/50 transition-all group">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-mtts-blue to-sky-400 p-1 mb-4 shadow-md group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Secretary" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/200x200/002855/38BDF8?text=Secretary'">
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Rohan Verma</h3>
+                    <p class="text-xs text-sky-400 font-semibold uppercase tracking-wider mt-1">Secretary</p>
+                    <p class="text-xs text-slate-400 mt-2">B.Tech ECE (3rd Year)</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-mtts-cyan" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & REGISTRATION FORM -->
+    <section id="contact" class="py-20 bg-[#001736] relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-mtts-cyan mb-2">Get Connected</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-white">Join Chapter / Contact Us</p>
+                        <p class="text-slate-400 text-sm mt-3">Interested in becoming a student member, registering for an upcoming workshop, or collaborating on RF projects? Reach out to us!</p>
+                    </div>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start space-x-4 p-4 rounded-xl glass-card border border-slate-800">
+                            <div class="p-3 rounded-lg bg-mtts-cyan/10 text-mtts-cyan">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Location</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Department of Electronics Engineering, Madhav Institute of Technology & Science (MITS-DU), Race Course Road, Gwalior, M.P. - 474005, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-xl glass-card border border-slate-800">
+                            <div class="p-3 rounded-lg bg-mtts-gold/10 text-mtts-gold">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Email Us</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">mtts@mitsgwalior.in / ieee.mtts.mits@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-xl glass-card border border-slate-800">
+                            <div class="p-3 rounded-lg bg-sky-400/10 text-sky-400">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Student Helpline</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">+91 751 240 9300 (Ext. IEEE MTT-S)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-mtts-cyan/20 shadow-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                            <i data-lucide="send" class="w-5 h-5 text-mtts-cyan mr-2"></i> Registration & Query Form
+                        </h3>
+
+                        <form id="registration-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" required placeholder="e.g., Aniket Sharma" class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="email">Email Address *</label>
+                                    <input type="email" id="email" required placeholder="name@mitsgwalior.in" class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="branch">Department / Branch *</label>
+                                    <select id="branch" required class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                        <option value="">Select Department</option>
+                                        <option value="ECE">Electronics & Communication (ECE)</option>
+                                        <option value="EE">Electrical Engineering (EE)</option>
+                                        <option value="CSE">Computer Science (CSE / IT)</option>
+                                        <option value="ME">Mechanical Engineering (ME)</option>
+                                        <option value="Other">Other Branch</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="year">Year of Study *</label>
+                                    <select id="year" required class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year (UG)</option>
+                                        <option value="2nd Year">2nd Year (UG)</option>
+                                        <option value="3rd Year">3rd Year (UG)</option>
+                                        <option value="4th Year">4th Year (UG)</option>
+                                        <option value="Postgraduate">PG / Ph.D. Scholar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="ieeeId">IEEE Member ID (If applicable)</label>
+                                    <input type="text" id="ieeeId" placeholder="e.g., 98765432" class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1" for="interest">Interested In *</label>
+                                    <select id="interest" required class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors">
+                                        <option value="Join Chapter">Join MTT-S Chapter Membership</option>
+                                        <option value="CST Workshop">Microstrip CST Workshop</option>
+                                        <option value="Tech Symposium">MTT-S Tech Symposium 2026</option>
+                                        <option value="VNA Testing">Hands-on VNA Masterclass</option>
+                                        <option value="General Query">General Inquiry / Collaboration</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1" for="message">Message / Queries</label>
+                                <textarea id="message" rows="3" placeholder="Specify your expectations or questions regarding the chapter..." class="w-full px-4 py-2.5 rounded-xl bg-mtts-navy border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-bold text-mtts-navy bg-gradient-to-r from-mtts-cyan via-sky-300 to-mtts-gold hover:opacity-95 shadow-lg shadow-mtts-cyan/20 transition-all duration-300 flex items-center justify-center">
+                                Submit Registration / Inquiry <i data-lucide="check-circle" class="w-4 h-4 ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP FOR QUICK EVENT REGISTRATION -->
+    <div id="event-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-card bg-mtts-navy rounded-2xl max-w-md w-full border border-mtts-cyan/30 p-6 relative shadow-2xl">
+            <button onclick="closeRegisterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="text-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-mtts-cyan/10 text-mtts-cyan mx-auto flex items-center justify-center mb-2">
+                    <i data-lucide="calendar" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">Event Registration</h3>
+                <p id="modal-event-title" class="text-xs text-mtts-cyan font-semibold mt-1">Event Name Here</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-3 text-left">
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+                    <input type="text" required placeholder="Enter name" class="w-full px-3 py-2 rounded-lg bg-mtts-deep border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Email ID</label>
+                    <input type="email" required placeholder="name@mitsgwalior.in" class="w-full px-3 py-2 rounded-lg bg-mtts-deep border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Enrollment / Roll No.</label>
+                    <input type="text" required placeholder="0901ECE211001" class="w-full px-3 py-2 rounded-lg bg-mtts-deep border border-slate-700 text-white text-xs focus:outline-none focus:border-mtts-cyan">
+                </div>
+                <button type="submit" class="w-full py-2.5 rounded-lg text-xs font-bold text-mtts-navy bg-mtts-cyan hover:bg-white transition-colors mt-2">
+                    Confirm Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-mtts-navy border-t border-slate-800 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg bg-mtts-cyan flex items-center justify-center text-mtts-navy font-bold">
+                            <i data-lucide="radio" class="w-4 h-4"></i>
+                        </div>
+                        <span class="font-extrabold text-white text-base">IEEE MTT-S MITS-DU</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        IEEE Microwave Theory & Technology Society Student Branch Chapter at Madhav Institute of Technology & Science (Deemed to be University), Gwalior, MP, India.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-mtts-cyan transition-colors">Home</a></li>
+                        <li><a href="#about-mtts" class="hover:text-mtts-cyan transition-colors">About IEEE MTT-S</a></li>
+                        <li><a href="#about-chapter" class="hover:text-mtts-cyan transition-colors">MITS-DU Chapter</a></li>
+                        <li><a href="#domains" class="hover:text-mtts-cyan transition-colors">Domains & Activities</a></li>
+                        <li><a href="#events" class="hover:text-mtts-cyan transition-colors">Events & Workshops</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">External Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://mtt.org" target="_blank" rel="noopener" class="hover:text-mtts-cyan transition-colors flex items-center">IEEE MTT-S Global <i data-lucide="external-link" class="w-3 h-3 ml-1"></i></a></li>
+                        <li><a href="https://www.ieee.org" target="_blank" rel="noopener" class="hover:text-mtts-cyan transition-colors flex items-center">IEEE.org <i data-lucide="external-link" class="w-3 h-3 ml-1"></i></a></li>
+                        <li><a href="https://mitsgwalior.in" target="_blank" rel="noopener" class="hover:text-mtts-cyan transition-colors flex items-center">MITS-DU Official <i data-lucide="external-link" class="w-3 h-3 ml-1"></i></a></li>
+                        <li><a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener" class="hover:text-mtts-cyan transition-colors flex items-center">IEEE Xplore Digital Library <i data-lucide="external-link" class="w-3 h-3 ml-1"></i></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Follow Our Socials</h4>
+                    <p class="text-xs text-slate-400 mb-3">Stay updated with workshop alerts and hardware design competitions.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-mtts-deep border border-slate-700 flex items-center justify-center text-slate-300 hover:text-mtts-cyan hover:border-mtts-cyan transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-mtts-deep border border-slate-700 flex items-center justify-center text-slate-300 hover:text-mtts-cyan hover:border-mtts-cyan transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-mtts-deep border border-slate-700 flex items-center justify-center text-slate-300 hover:text-mtts-cyan hover:border-mtts-cyan transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="mailto:mtts@mitsgwalior.in" class="w-8 h-8 rounded-lg bg-mtts-deep border border-slate-700 flex items-center justify-center text-slate-300 hover:text-mtts-cyan hover:border-mtts-cyan transition-colors" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-slate-500">
+                <p>© 2026 IEEE MTT-S Student Branch Chapter, MITS-DU Gwalior. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0">Designed for RF & Microwave Engineers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Navigation Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('menu-icon-open');
+        const iconClose = document.getElementById('menu-icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden', !isExpanded);
+            iconClose.classList.toggle('hidden', isExpanded);
+        });
+
+        // Close mobile drawer when clicking a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            });
+        });
+
+        // Event Filtering Logic
+        function filterEvents(category) {
+            const cards = document.querySelectorAll('.event-card');
+            const btns = document.querySelectorAll('.event-tab-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-mtts-cyan', 'text-mtts-navy');
+                btn.classList.add('text-slate-300');
+            });
+
+            const activeBtn = document.getElementById('btn-' + category);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-mtts-cyan', 'text-mtts-navy');
+                activeBtn.classList.remove('text-slate-300');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Modal Functions
+        function openRegisterModal(eventName) {
+            document.getElementById('modal-event-title').innerText = eventName;
+            document.getElementById('event-modal').classList.remove('hidden');
+        }
+
+        function closeRegisterModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert('Registration confirmed for ' + document.getElementById('modal-event-title').innerText + '! A confirmation email has been sent.');
+            closeRegisterModal();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const interest = document.getElementById('interest').value;
+            alert('Thank you ' + name + '! Your registration/inquiry for "' + interest + '" has been received by IEEE MTT-S MITS-DU Chapter.');
+            document.getElementById('registration-form').reset();
+        }
+    </script>
+</body>
+</html>
